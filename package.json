@@ -1,0 +1,51 @@
+{
+  "name": "integration-testing-mocha",
+  "version": "1.0.0",
+  "description": "test project",
+  "main": "./src/index.js",
+  "scripts": {
+    "test-qa": "cross-env NODE_ENV=default mocha './src/test/*.js' --require @babel/register --require @babel/polyfill",
+    "lint": "eslint ./**/**/*.js --fix",
+    "test-prod": "cross-env NODE_ENV=prod mocha './src/test/*.js' --require @babel/register --require @babel/polyfill"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run test-qa",
+      "pre-push": "npm run lint && npm run test-qa"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olesiaMartushkanova/integration-testing-mocha.git"
+  },
+  "author": "Olesia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/olesiaMartushkanova/integration-testing-mocha/issues"
+  },
+  "homepage": "https://github.com/olesiaMartushkanova/integration-testing-mocha#readme",
+  "dependencies": {
+    "@babel/polyfill": "^7.8.3",
+    "axios": "^0.19.1",
+    "babel-eslint": "^10.0.3",
+    "chai": "^4.2.0",
+    "config": "^3.2.5",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-mocha": "^6.2.2",
+    "mocha": "^7.0.0",
+    "moment": "^2.24.0",
+    "npm": "^6.13.6"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.3",
+    "@babel/core": "^7.8.3",
+    "@babel/node": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/register": "^7.8.3",
+    "cross-env": "^7.0.0",
+    "husky": "^4.2.1",
+    "nodemon": "^2.0.2"
+  }
+}
