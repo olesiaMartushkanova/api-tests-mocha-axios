@@ -13,19 +13,20 @@ describe("Get characters", function () {
     "Content-Type": "application/json",
     Date: moment().format("YYYY-MM-DD HH:mm:ss"),
   };
-  const myparams = {
+
+  const params: {[key: string]: any} = {
     apikey: config.get("apikey"),
     ts: config.get("ts"),
     hash: config.get("hash"),
   };
 
   it("Get Spider-Man", async function () {
-    myparams.name = "Spider-Man";
+    params.name = "Spider-Man";
 
     const response = await sendRequest({
       method: "get",
       url,
-      params: myparams,
+      params,
       headers,
     });
     expect(response.data.data.results[0].name).to.equal("Spider-Man");

@@ -6,7 +6,7 @@ export const sendRequest = async ({
   method,
   headers,
   params,
-}) => {
+}: any) => {
   try {
     const data = await axios({
       method,
