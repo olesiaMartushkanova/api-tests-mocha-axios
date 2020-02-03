@@ -5,8 +5,8 @@
   "main": "./src/index.js",
   "scripts": {
     "test-qa": "cross-env NODE_ENV=default mocha './src/test/*.ts' --require ts-node/register",
-    "lint": "eslint ./**/**/*.ts --fix",
-    "test-prod": "cross-env NODE_ENV=prod mocha './src/test/*.ts' --require ts-node/register"
+    "test-prod": "cross-env NODE_ENV=prod mocha './src/test/*.ts' --require ts-node/register",
+    "lint": "eslint ./**/**/*.ts --fix"
   },
   "husky": {
     "hooks": {
