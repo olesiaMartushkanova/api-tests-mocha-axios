@@ -11,9 +11,15 @@ Sign up on Marvel developer portal to get API keys: https://developer.marvel.com
 
 ### Installing
 
-1. Clone the project: `git clone git@github.com:olesiaMartushkanova/api-tests-mocha-axios.git`
+1. Clone the project: 
+```
+git clone git@github.com:olesiaMartushkanova/api-tests-mocha-axios.git
+```
 
-2. Install node_modules:`npm install`
+2. Install node_modules:
+```
+npm install
+```
 
 3. Create `default.json` using `default.example.json`
 
