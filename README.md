@@ -15,17 +15,20 @@ Sign up on Marvel developer portal to get API keys: https://developer.marvel.com
 
 2. Install node_modules:`npm install`
 
-3. Create <font color="blue">default.json</font> using <font color="blue">default.example.json</font>file
+3. Create `default.json` using `default.example.json`
 
-4. Create <font color="blue">prod.json</font> using <font color="blue">prod.example.json</font>file (to see how environments variables are overwritten)
+4. Create `prod.json` using `prod.example.json` (to see how environments variables are overwritten)
 
 ## Running the tests
 
+Running using details from `default.json`
 ```
 npm run test-qa
 ```
 
 OR
+
+Running using details from `prod.json`
 
 ```
 npm run test-prod
