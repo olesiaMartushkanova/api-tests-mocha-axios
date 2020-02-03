@@ -28,7 +28,8 @@
     "import/prefer-default-export": "off",
     "import/extensions": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/no-explicit-any": "off"
+    "@typescript-eslint/no-explicit-any": "off",
+    "no-multi-assign": "off"
   },
   "settings": {
     "import/resolver": {

@@ -14,14 +14,19 @@ describe("Get characters", function () {
     Date: moment().format("YYYY-MM-DD HH:mm:ss"),
   };
 
-  const params: {[key: string]: any} = {
-    apikey: config.get("apikey"),
-    ts: config.get("ts"),
-    hash: config.get("hash"),
-  };
+  let charName;
+
+  const params: {
+        [key: string]: any;
+    } = {
+      apikey: config.get("apikey"),
+      ts: config.get("ts"),
+      hash: config.get("hash"),
+      name: String,
+    };
 
   it("Get Spider-Man", async function () {
-    params.name = "Spider-Man";
+    charName = params.name = "Spider-Man";
 
     const response = await sendRequest({
       method: "get",
@@ -29,7 +34,21 @@ describe("Get characters", function () {
       params,
       headers,
     });
-    expect(response.data.data.results[0].name).to.equal("Spider-Man");
+    expect(response.data.data.results[0].name).to.equal(charName);
+    expect(response.status).to.equal(200);
+  });
+
+  // Negative test case when empty is exected
+  it("Get inexistent character", async function () {
+    charName = params.name = "Olesia-Superhero";
+
+    const response = await sendRequest({
+      method: "get",
+      url,
+      params,
+      headers,
+    });
+    expect(response.data.data.results).to.deep.equal([]);
     expect(response.status).to.equal(200);
   });
 });
